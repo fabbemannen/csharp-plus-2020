@@ -27,6 +27,7 @@ namespace Session03Excercise02
                         else
                         {
                             //Error exception, wrong format
+                            //Set color and then reset it after the error
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.Write(" ERROR: FORMAT EXCEPTION");
                             Console.ResetColor();
