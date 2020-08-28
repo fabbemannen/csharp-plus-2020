@@ -8,27 +8,27 @@ namespace Session03Excercise02
         {
             while (true)
             {
-                Console.WriteLine("Ange ett antal siffror, separerat med mellanslag.");
+                Console.WriteLine("Ange ett antal siffror (, för decimaler), separerat med mellanslag.");
                 var input = Console.ReadLine();
                 if (input != "")
                 {
 
                     var inputArray = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    var inputTotal = 0;
+                    var inputTotal = 0.0;
                     var inputLength = inputArray.Length;
 
                     foreach (var number in inputArray)
                     {
                         Console.Write("Värdet är " + number);
-                        if (Int32.TryParse(number, out var numberParse))
+                        if (double.TryParse(number, out double numberParse))
                         {
-                            inputTotal += Convert.ToInt32(numberParse);
+                            inputTotal += Convert.ToDouble(numberParse);
                         }
                         else
                         {
                             //Error exception, wrong format
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.Write(" ERROR: INTEGERS ONLY");
+                            Console.Write(" ERROR: FORMAT EXCEPTION");
                             Console.ResetColor();
                             //Fix average (without removing the entry)
                             inputLength--;
