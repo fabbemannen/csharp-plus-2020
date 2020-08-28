@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Session03Excercise02
 {
@@ -6,13 +7,14 @@ namespace Session03Excercise02
     {
         static void Main(string[] args)
         {
+            IFormatProvider format = CultureInfo.CurrentCulture;
+            Console.WriteLine("Nuvarande språkinställning: " + CultureInfo.CurrentCulture.NativeName + "/" + CultureInfo.CurrentCulture.EnglishName);
             while (true)
             {
-                Console.WriteLine("Ange ett antal siffror (, för decimaler), separerat med mellanslag.");
+                Console.WriteLine("Ange ett antal siffror, separerat med mellanslag.");
                 var input = Console.ReadLine();
                 if (input != "")
                 {
-
                     var inputArray = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     var inputTotal = 0.0;
                     var inputLength = inputArray.Length;
